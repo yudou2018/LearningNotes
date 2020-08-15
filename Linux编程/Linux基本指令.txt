@@ -67,3 +67,80 @@ chown yudou:root file 将file所有者改为yudou 所有组改为root
 chown root:root aa -R 递归修改所有者(目录中所有文件)
 chgrp 修改所有组
 ------------------------------------------------ 2020 8 14 ---------------------------------------
+
+------------------------------------------------ 2020 8 15 ---------------------------------------
+查找与检索
+find /* -name "*.jpg" 从根目录查找以.jpg结尾的文件
+find . -name 'file*' 查找文件名file 后面随意 默认递归查找
+
+grep "hello" ./* -R 指定递归查找文件内包含hello内容的
+-c 输出匹配行的计数
+-I 不区分大小写
+-h 查询文件时不显示文件名
+
+安装和卸载
+apt-get (仅限Ubuntu系统)
+yum install w3m 安装w3m浏览器
+参考https://mirrors.tuna.tsinghua.edu.cn/help/epel/
+https://mirrors.tuna.tsinghua.edu.cn/help/centos/
+将epel.repo中的mirrolist注释掉，且将baseurl取消注释修改为清华源 
+而将CentOS-Base保留默认
+成功后yum update更新所有软件和系统内核
+阿里镜像
+yum clean all 清除缓存
+yum makecache 构建缓存
+----- 失败-------
+
+links官网下载压缩包安装links
+tar zxvf links-2.21.tar.gz 解压links-2.21.tar.gz到当前目录
+运行 ./configure 编译准备 看是否有文件缺失
+make 软件编译
+期间输入y回车确定安装了make工具
+make install 完成安装
+make clean 删除临时文件
+cd /usr/local/bin 目录下可以看到安装的links
+
+磁盘管理
+mount  /dev/sdb1  test 把u盘绑定到test目录
+fdisk -l 查看当前磁盘信息 看到/dev/sdb1
+把/dev/sdb1挂载到可访问的目录下
+mount /dev/sdb1 /mnt 随后访问cd /mnt可看到u盘内容
+可以cp到u盘等操作
+umount /mnt 卸载 后mnt中就没有内容了
+被挂载的目录叫做挂载点
+
+dd 拷贝iso9660标准光盘才可以
+dd if=/dev/cdrom of=cdrom.iso
+/dev/null 无底洞 可无限输出任何数据
+dd if=test of=/dev/null 显示传输的文件大小、所用时间和速度
+dd if=/dev/zero of=zeroTest.txt bs=1M count=1 初始化zeroTest.txt为1M大小 全0
+
+压缩包管理
+tar rar zip
+c 创建，r 追加到末尾，t 列出内容，u更新文件，x 解压缩
+tar gzip 或者 bzip2算法压缩、解压缩
+tar cvf dir.tar dir 将dir打包为dir.tar 普通用户无法删除
+tar xvf dir.tar dir 将dir.tar解压缩为dir目录
+tar zcvf dir.tar.gz dir 用压缩算法gzip打包为dir.tar.gz所占内存少很多
+tar jcvf app.tar.bz2 app 用压缩算法bzip2将app打包为app.tar.bz2
+tar jxvf app.tar.bz2 -C test 用bzip2方法解压至test（test首先应该存在）
+
+rar a -r (linux默认不存在)
+zip -r app.zip app 压缩为app.zip
+
+以上tar zcvf dir.tar.gz dir 所压缩效率减小内存最多
+
+
+进程管理（任务管理器）
+who 查看用户、终端号几点几分打开
+ps 查看进程
+ps aux a所有进程 x控制终端进程 内容非常多 PID进程号 CPU、内存使用比
+ps ajx
+ps -Lf 查看线程
+jobs Ctrl+Z暂停 fg开始 多用几个cat可以用jobs看到不同的编号被停止
+fg 1或2或3 选择恢复哪一个任务 切换到前台
+用ctrl+c一个个关闭 直到jobs没有显示
+bg 设置到后台但仍然在运行 可用jobs看到状态为Running
+一次只有一个进程组在前台 ctrl z 放到后台暂停
+前台剩下shell控制台
+------------------------------------------------ 2020 8 15 ---------------------------------------

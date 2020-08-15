@@ -1,0 +1,11 @@
+1. 在虚拟机设置将 网卡 设置为 桥接模式
+
+2. 打开windows命令行 ipconfig查到当前上网所用端口（WLAN 192.168.10.4）
+则到Linux中ifconfig 查看到ens33网卡 设置 ifconfig ens33 192.168.10.5
+Windows中 ping 192.168.10.5 收到回复
+
+3. 打开PuTTY 输入地址为Linux中ifconfig看到ens33相同地址 192.168.10.5
+PuTTY还可以到Appearence中选择字体大小， 后点击保存。
+
+4. 此后每次打开虚拟机只需挂机在登陆界面，然后打开PuTTY输入root和密码
+进入，进行远程管理，运行命令行即可。
