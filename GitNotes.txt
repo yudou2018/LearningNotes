@@ -1,0 +1,41 @@
+1. Git Bash Here //打开git命令窗口
+
+2. mkdir learningNotes //创建文件夹名为“learningNotes”
+
+3. cd learningNotes //进入learningNotes文件夹
+
+4. git init //创建.git文件夹，即创建本地版本库
+
+5. git add gitLearningNotes.txt //将本文档加入版本库
+
+6. git commit -m"first add my learning notes." //完成修改，并输入本次修改的解释
+
+//本地库完成
+
+7. ssh-keygen -t rsa -C "myemail@xxx.com" //输入我的邮箱并创建对应的SSH钥 myKey.pub等
+
+8. open the website Github and sign in my account, click "Settings"--"SSH and GPG keys"--"New SSH key", copy the content of "myKey.pub"; //添加新的SSH key将本地库与Github关联起来
+
+9. +New Repository //右上角“+”号，在github创建新库learningNotes
+
+10.copy the http:xxxxxx; then git remote add origin "http:xxxxxx"; //复制http地址，在git中右键paste粘贴
+
+11.git push -u origin master //将本地库同步到Github远端库
+
+//同步完毕
+
+附：git diff <gitLearningNotes>可以查看文件的修改内容
+       
+在某文件夹中gitbash 输入 git clone "http:xxxxxxx" 可以将项目下载至该文件夹
+
+删除文件:
+
+git fetch 取下文件目录
+
+进入文件夹 rm删除指定文件
+
+git status查看状态
+
+git add . -A 提交做出的修改
+
+git push origin master -f 传送

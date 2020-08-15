@@ -1,0 +1,69 @@
+------------------------------------------------ 2020 8 14 ---------------------------------------
+基本操作指令
+1. 第一个编译实例
+touch helloWorld.cpp
+vim helloWorld.cpp 进入开始编辑代码
+完成后摁ESC后Shift+Z Z快捷保存
+在目录下输入g++ helloWorld.cpp -o hlwd进行编译
+输入 ./hlwd
+成功运行
+
+tree 可以看见当下目录的树状结构
+.. 上一级
+. 当前
+只包含 . 和 .. 的目录称为空目录
+rmdir 只能删除空目录
+rm -r 递归删除 recursion 会询问是否进入xx xx 是否删除xx xx？
+touch 创建空文件/修改文件的更新时间
+cat helloWorld.cpp 在命令行打印出内容
+less 带上下翻页查看文本内容
+more  Shift+PgUp/PgDn上下翻页
+rm -rf 强制删除
+mv 移动
+cp file1 ../ 拷贝文件到上一级
+cp -r dir1 ../ 拷贝文件夹到上一级
+cat 后等待标准输入 然后输出此内容
+Ctrl+D 表示结束
+head -5 helloWorld.cpp 显示头5行
+tail -5 helloWorld.cpp 显示尾部5行
+
+ln 创建链接：
+硬链接与软链接（符号链接） 
+ln -s helloWorld.cpp helloWorld_quick.cpp
+后者是一个链接，类似快捷方式，占用内存极少 （类似C++的指针）
+改变helloWorld.cpp后 进入helloWorld_quick.cpp 也看到修改
+硬链接：多个文件名指向同一文件，大小会随着源文件变化。 （类似C++的引用）
+ln helloWorld.cpp a.cpp 创建硬链接 不带 -s
+
+wc word counter 
+wc a.cpp  8行 17个单词 126个字符
+wc -c 显示字节数
+wc -l 显示行数
+wc -w 显示字符数
+
+od -tc file 显示ASCII码形式 可以看到隐藏字符\n
+od -tcx file 以十六进制显示
+od -tcd file 十进制
+od -tco file 八进制
+od --help 查看帮助
+
+du 查看目录大小
+du -hm 以mb为单位
+不够一兆 向上取整
+du -hb 以字节显示
+du -hk 以k为单位
+
+df 查看磁盘使用情况
+df --block-size=GB 以GB显示使用情况
+ --block-size=MB ...
+
+whiami 查看当前用户
+chmod 修改权限类 u(user), g(group), o(others), a(all)
+chmod u+x file 使user对于file加上x权限 （文字设定法）
+chmod 644 file (110 100 100对应的rwx(u) rwx(g) rwx(o))
+
+chown yudou:root file 将file所有者改为yudou 所有组改为root
+所有者与所有组未必有关系 但是必须存在于系统中 chown必须要超级用户能够使用
+chown root:root aa -R 递归修改所有者(目录中所有文件)
+chgrp 修改所有组
+------------------------------------------------ 2020 8 14 ---------------------------------------
