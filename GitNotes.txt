@@ -36,6 +36,16 @@ git fetch 取下文件目录
 
 git status查看状态
 
+git add -A 提交所有变化
+
+git add -u 提交被修改和被删除的，不包括新文件
+
+git add . 提交新文件和修改的，不包括被删除的
+
 git add . -A 提交做出的修改
 
+git commit -m "xxxx" 提交修改的注释信息
+
 git push origin master -f 传送
+
+git push -u origin master -u设置默认主机 此后可以不需要加后面的参数而直接使用git push
