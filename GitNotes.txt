@@ -49,3 +49,8 @@ git commit -m "xxxx" 提交修改的注释信息
 git push origin master -f 传送
 
 git push -u origin master -u设置默认主机 此后可以不需要加后面的参数而直接使用git push
+
+在github网页上操作更新 比如添加了Readme.md文件后 本地文件夹没有保持更新
+此时没法直接上传本地库 
+必须先执行git pull 将本地也更新到与网页上一致 比如添加上Readme.md
+然后才能git push
