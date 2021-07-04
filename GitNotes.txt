@@ -64,3 +64,5 @@ git status 查看修改信息提示使用git add
 git add之后 再次git status
 git commit -m "添加了xxx"
 git push 输入用户名密码 会显示传输速率等
+
+学习git使用：https://www.runoob.com/manual/git-guide/
