@@ -66,3 +66,9 @@ git commit -m "添加了xxx"
 git push 输入用户名密码 会显示传输速率等
 
 学习git使用：https://www.runoob.com/manual/git-guide/
+
+今天还遇到了上传大文件失败后，文件移出目录，然后重复push都不成功；
+解决办法是把文件备份，然后重新新建文件夹，git init，git clone，再把它更新成
+目标的样子，然后git push成功。
+
+20210704
