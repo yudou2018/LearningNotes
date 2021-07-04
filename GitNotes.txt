@@ -59,7 +59,7 @@ git push -u origin master -u设置默认主机 此后可以不需要加后面的
 在Linux上操作：
 
 git remote set-url origin https://yudou2018@github.com
-先git clone下整个仓库
+先git clone下整个仓库 必须先在当前目录git init
 git status 查看修改信息提示使用git add
 git add之后 再次git status
 git commit -m "添加了xxx"
