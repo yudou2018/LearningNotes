@@ -54,3 +54,13 @@ git push -u origin master -u设置默认主机 此后可以不需要加后面的
 此时没法直接上传本地库 
 必须先执行git pull 将本地也更新到与网页上一致 比如添加上Readme.md
 然后才能git push
+
+——————————————————————————————————————————————————————————————————————————————
+在Linux上操作：
+
+git remote set-url origin https://yudou2018@github.com
+先git clone下整个仓库
+git status 查看修改信息提示使用git add
+git add之后 再次git status
+git commit -m "添加了xxx"
+git push 输入用户名密码 会显示传输速率等
