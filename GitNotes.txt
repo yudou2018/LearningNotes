@@ -73,4 +73,11 @@ git push 输入用户名密码 会显示传输速率等
 
 20210704
 
+使Git上上传的时候附上自己的ID:
+git config --global user.name "yudou2018"
+git config --global user.email "363926135@qq.com"
+也可以使用
+git config --global user.name
+git config --global user.email
+查看当前使用的ID
 20210705
