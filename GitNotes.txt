@@ -80,4 +80,6 @@ git config --global user.email "363926135@qq.com"
 git config --global user.name
 git config --global user.email
 查看当前使用的ID
+出现错误：Gtk-Message: 13:03:53.388: Failed to load module "canberra-gtk-module"
+yum install libcanberra-gtk*解决
 20210705
